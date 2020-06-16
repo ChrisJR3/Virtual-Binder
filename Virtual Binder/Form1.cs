@@ -15,6 +15,12 @@ namespace Virtual_Binder
         public Form1()
         {
             InitializeComponent();
+
+            //opening Login Screen right away
+            LoginScreen ls = new LoginScreen();
+            this.Controls.Add(ls);
+            Form f = this.FindForm();
+            f.Controls.Remove(this);
         }
     }
 }
