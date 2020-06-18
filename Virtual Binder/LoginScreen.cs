@@ -129,7 +129,7 @@ namespace Virtual_Binder
 
             foreach (Accounts a in accountList)
             {
-                writer.WriteStartElement("Account" + username);
+                writer.WriteStartElement("Account" + emailOrUsernameTextBox.Text);
 
                 writer.WriteElementString("Username", a.username);
                 writer.WriteElementString("Email", a.email);

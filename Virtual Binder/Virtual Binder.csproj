@@ -88,9 +88,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Blue square.svg" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Blue square.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -98,7 +98,7 @@
             // 
             // backgroundBox1
             // 
-            this.backgroundBox1.BackgroundImage = global::Virtual_Binder.Properties.Resources.Blue_square;
+            this.backgroundBox1.Image = global::Virtual_Binder.Properties.Resources.Blue_square;
             this.backgroundBox1.Location = new System.Drawing.Point(48, 106);
             this.backgroundBox1.Name = "backgroundBox1";
             this.backgroundBox1.Size = new System.Drawing.Size(436, 149);
@@ -221,7 +221,7 @@
             // backgroundTextBox2
             // 
             this.backgroundTextBox2.BackgroundImage = global::Virtual_Binder.Properties.Resources.Blue_square;
-            this.backgroundTextBox2.Location = new System.Drawing.Point(48, 76);
+            this.backgroundTextBox2.Location = new System.Drawing.Point(48, 73);
             this.backgroundTextBox2.Name = "backgroundTextBox2";
             this.backgroundTextBox2.Size = new System.Drawing.Size(436, 212);
             this.backgroundTextBox2.TabIndex = 10;

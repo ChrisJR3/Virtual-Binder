@@ -20,8 +20,7 @@ namespace Virtual_Binder
             //opening Login Screen right away
             LoginScreen ls = new LoginScreen();
             this.Controls.Add(ls);
-            Form f = this.FindForm();
-            f.Controls.Remove(this);
+            
         }
     }
 }
