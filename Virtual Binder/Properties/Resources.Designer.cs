@@ -69,5 +69,15 @@ namespace Virtual_Binder.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///.
+        /// </summary>
+        internal static string XMLAccountFile {
+            get {
+                return ResourceManager.GetString("XMLAccountFile", resourceCulture);
+            }
+        }
     }
 }

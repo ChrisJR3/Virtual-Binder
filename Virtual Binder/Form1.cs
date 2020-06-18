@@ -18,9 +18,9 @@ namespace Virtual_Binder
             InitializeComponent();
 
             //opening Login Screen right away
-            LoginScreen ls = new LoginScreen();
+            UserControl1 ls = new UserControl1();
             this.Controls.Add(ls);
-            
+            ls.Location = new Point((this.Width - ls.Width) / 2, (this.Height - ls.Height) / 2);
         }
     }
 }
