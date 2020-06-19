@@ -156,6 +156,33 @@ namespace Virtual_Binder
             int b;
             a = Convert.ToInt32(newestGradeTextBox.Text);
             b = Convert.ToInt32(totalPercentTextBox.Text);
+            int newAverage;
+
+            if (specificAmccount.class1Average == 0 & currentClass == 1)
+            {
+                newAverage = calculateMethod(0, a, b);
+            }
+            else if (specificAmccount.class2Average == 0 & currentClass == 2)
+            {
+                newAverage = calculateMethod(0, a, b);
+            }
+            else if (specificAmccount.class3Average == 0 & currentClass == 3)
+            {
+                newAverage = calculateMethod(0, a, b);
+            }
+            else if (specificAmccount.class4Average == 0 & currentClass == 4)
+            {
+                newAverage = calculateMethod(0, a, b);
+            }
+            else if (specificAmccount.class5Average == 0 & currentClass == 5)
+            {
+                newAverage = calculateMethod(0, a, b);
+            }
+        }
+
+        public void calculateMethod(int currentAverage, int newGradePercent, int newGradePercentWorth)
+        {
+            //Put calculations in here and stuff
         }
     }
 }

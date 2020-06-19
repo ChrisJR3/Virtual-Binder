@@ -15,14 +15,15 @@ namespace Virtual_Binder
     {
         int classCounter = 1;
 
-        public string newAccUsername, newAccEmail, newAccPassword;
+        public string newAccUsername;
 
         List<Accounts> accountList = new List<Accounts>();
+        List<String> classNameList = new List<String>();
 
         public Create_New_Account()
         {
             InitializeComponent();
-            loadAccounts();
+            loadAccount();
         }
 
         private void exitButton2_Click(object sender, EventArgs e)
@@ -32,46 +33,55 @@ namespace Virtual_Binder
 
         private void moveOnButton_Click(object sender, EventArgs e)
         {
-            classCounter++;
-            whichClassLabel.Text = "CLASS " + classCounter;
+            addAccount();
         }
 
         private void anotherClassButton_Click(object sender, EventArgs e)
         {
-            addAccounts();
+            classNameList.Add(classNameTextBox.Text);
 
             classCounter++;
             whichClassLabel.Text = "CLASS " + classCounter;
         }
 
-        public void addAccounts()
+        public void addAccount()
         {
             XmlWriter writer = XmlWriter.Create("Resources/XMLAccountFile.xml", null);
 
             writer.WriteStartElement("Account");
 
-            foreach (Accounts a in accountList)
+            writer.WriteStartElement("Account" + usernameTextBox.Text);
+
+            writer.WriteElementString("Username", usernameTextBox.Text);
+            writer.WriteElementString("Email", emailTextBox.Text);
+            writer.WriteElementString("Password", passwordTextBox1.Text);
+            writer.WriteElementString("Class 1", passwordTextBox1.Text);
+            if (classNameList.class2 != null)
             {
-                writer.WriteStartElement("Account" + newAccUsername);
-
-                writer.WriteElementString("Username", a.username);
-                writer.WriteElementString("Email", a.email);
-                writer.WriteElementString("Password", a.password);
-                writer.WriteElementString("Class 1", a.class1);
-                writer.WriteElementString("Class 2", a.class2);
-                writer.WriteElementString("Class 3", a.class3);
-                writer.WriteElementString("Class 4", a.class4);
-                writer.WriteElementString("Class 5", a.class5);
-
-                writer.WriteEndElement();
+                writer.WriteElementString("Class 2", class2);
             }
+            if (class3 != null)
+            {
+                writer.WriteElementString("Class 2", a.class3);
+            }
+            if (class4 != null)
+            {
+                writer.WriteElementString("Class 2", a.class4);
+            }
+            if (class5 != null)
+            {
+                writer.WriteElementString("Class 2", a.class5);
+            }
+
+            writer.WriteEndElement();
+            
 
             writer.WriteEndElement();
 
             writer.Close();
         }
 
-        public void loadAccounts()
+        public void loadAccount()
         {
             string newUsername, newEmail, newPassword, newClass1, newClass2, newClass3, newClass4, newClass5;
             int newClass1Average, newClass2Average, newClass3Average, newClass4Average, newClass5Average;
@@ -127,6 +137,31 @@ namespace Virtual_Binder
             }
 
             reader.Close();
+        }
+
+        private void createAccountButton2_Click(object sender, EventArgs e)
+        {
+            if (passwordTextBox1.Text == passwordTextBox2.Text)
+            {
+                addAccount();
+
+                emailLabel.Visible = false;
+                usernameLabel.Visible = false;
+                passwordLabel1.Visible = false;
+                passwordLabel2.Visible = false;
+                emailTextBox.Visible = false;
+                usernameTextBox.Visible = false;
+                passwordTextBox1.Visible = false;
+                passwordTextBox2.Visible = false;
+
+                pleaseEnterClassName.Visible = true;
+                classNameTextBox.Visible = true;
+            }
+            else if (passwordTextBox1.Text != passwordTextBox2.Text)
+            {
+                passwordTextBox1.Text = "Please enter matching passwords.";
+                passwordTextBox2.Text = "";
+            }        
         }
     }
 }

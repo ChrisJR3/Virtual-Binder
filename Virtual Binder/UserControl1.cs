@@ -27,27 +27,6 @@ namespace Virtual_Binder
             loadAccounts(); // load data from XML file with program starts
         }
 
-        private void createAccountButton2_Click(object sender, EventArgs e)
-        {
-            if (passwordTextBox1.Text == passwordTextBox2.Text)
-            {
-                shareUsername = usernameTextBox.Text;
-                shareEmail = emailTextBox.Text;
-                sharePassword = passwordTextBox1.Text;
-
-                Create_New_Account cna = new Create_New_Account();
-                this.Controls.Add(cna);
-
-                Form ls = this.FindForm();
-                ls.Controls.Remove(this);
-            }
-            else if (passwordTextBox1.Text != passwordTextBox2.Text)
-            {
-                passwordTextBox1.Text = "Please enter matching passwords.";
-                passwordTextBox2.Text = "";
-            }
-        }
-
         private void exitButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -60,7 +39,12 @@ namespace Virtual_Binder
             if (searchBool == true)
             {
                 addAccounts();
-                //go onto main screen 
+
+                MainScreen ms = new MainScreen();
+                this.Controls.Add(ms);
+
+                Form ls = this.FindForm();
+                ls.Controls.Remove(this);
             }
             else if (searchBool == false)
             {
@@ -81,16 +65,11 @@ namespace Virtual_Binder
 
         private void createAccountButton_Click(object sender, EventArgs e)
         {
-            emailLabel.Visible = true;
-            usernameLabel.Visible = true;
-            passwordLabel1.Visible = true;
-            passwordLabel2.Visible = true;
-            emailTextBox.Visible = true;
-            usernameTextBox.Visible = true;
-            passwordTextBox1.Visible = true;
-            passwordTextBox2.Visible = true;
-            createAccountButton2.Visible = true;
-            backgroundTextBox2.Visible = true;
+            Create_New_Account cna = new Create_New_Account();
+            this.Controls.Add(cna);
+
+            Form ls = this.FindForm();
+            ls.Controls.Remove(this);
         }
 
         public Boolean LinearSearch(List<String> searchList, String searchValue)
