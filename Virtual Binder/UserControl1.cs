@@ -38,10 +38,10 @@ namespace Virtual_Binder
 
             if (searchBool == true)
             {
-                addAccounts();
+                MainScreen ms1 = new MainScreen(emailOrUsernameTextBox.Text);
 
-                MainScreen ms = new MainScreen();
-                this.Controls.Add(ms);
+                MainScreen ms2 = new MainScreen();
+                this.Controls.Add(ms2);
 
                 Form ls = this.FindForm();
                 ls.Controls.Remove(this);
@@ -140,33 +140,6 @@ namespace Virtual_Binder
             }
 
             reader.Close();
-        }
-
-        public void addAccounts()
-        {
-            XmlWriter writer = XmlWriter.Create("Resources/XMLAccountFile.xml", null);
-
-            writer.WriteStartElement("Account");
-
-            foreach (Accounts a in accountList)
-            {
-                writer.WriteStartElement("Account" + usernameTextBox.Text);
-
-                writer.WriteElementString("Username", a.username);
-                writer.WriteElementString("Email", a.email);
-                writer.WriteElementString("Password", a.password);
-                writer.WriteElementString("Class 1", a.class1);
-                writer.WriteElementString("Class 2", a.class2);
-                writer.WriteElementString("Class 3", a.class3);
-                writer.WriteElementString("Class 4", a.class4);
-                writer.WriteElementString("Class 5", a.class5);
-
-                writer.WriteEndElement();
-            }
-
-            writer.WriteEndElement();
-
-            writer.Close();
         }
     }
 }

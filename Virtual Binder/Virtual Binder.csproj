@@ -76,6 +76,9 @@
     <EmbeddedResource Include="Create New Account.resx">
       <DependentUpon>Create New Account.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainScreen.resx">
       <DependentUpon>MainScreen.cs</DependentUpon>
     </EmbeddedResource>
@@ -109,7 +112,9 @@
     <None Include="Resources\Blue square.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\XMLAccountFile.xml" />
+    <None Include="Resources\XMLAccountFile.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -13,6 +13,8 @@ namespace Virtual_Binder
 {
     public partial class Form1 : Form
     {
+        public string grandUsername;
+
         public Form1()
         {
             InitializeComponent();

@@ -34,6 +34,14 @@ namespace Virtual_Binder
         private void moveOnButton_Click(object sender, EventArgs e)
         {
             addAccount();
+
+            MainScreen ms1 = new MainScreen(usernameTextBox.Text);
+
+            MainScreen ms = new MainScreen();
+            this.Controls.Add(ms);
+
+            Form cna = this.FindForm();
+            cna.Controls.Remove(this);
         }
 
         private void anotherClassButton_Click(object sender, EventArgs e)
@@ -56,26 +64,25 @@ namespace Virtual_Binder
             writer.WriteElementString("Email", emailTextBox.Text);
             writer.WriteElementString("Password", passwordTextBox1.Text);
             writer.WriteElementString("Class 1", passwordTextBox1.Text);
-            if (classNameList.class2 != null)
+            if (classNameList[2] != null)
             {
-                writer.WriteElementString("Class 2", class2);
+                writer.WriteElementString("Class 2", classNameList[2]);
             }
-            if (class3 != null)
+            if (classNameList[3] != null)
             {
-                writer.WriteElementString("Class 2", a.class3);
+                writer.WriteElementString("Class 3", classNameList[3]);
             }
-            if (class4 != null)
+            if (classNameList[4] != null)
             {
-                writer.WriteElementString("Class 2", a.class4);
+                writer.WriteElementString("Class 4", classNameList[4]);
             }
-            if (class5 != null)
+            if (classNameList[5] != null)
             {
-                writer.WriteElementString("Class 2", a.class5);
+                writer.WriteElementString("Class 5", classNameList[5]);
             }
 
             writer.WriteEndElement();
             
-
             writer.WriteEndElement();
 
             writer.Close();
@@ -143,8 +150,6 @@ namespace Virtual_Binder
         {
             if (passwordTextBox1.Text == passwordTextBox2.Text)
             {
-                addAccount();
-
                 emailLabel.Visible = false;
                 usernameLabel.Visible = false;
                 passwordLabel1.Visible = false;
