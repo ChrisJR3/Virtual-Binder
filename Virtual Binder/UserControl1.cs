@@ -24,7 +24,7 @@ namespace Virtual_Binder
         {
             InitializeComponent();
 
-            //loadAccounts(); // load data from XML file with program starts
+            loadAccounts(); // load data from XML file with program starts
         }
 
         private void createAccountButton2_Click(object sender, EventArgs e)
@@ -59,6 +59,7 @@ namespace Virtual_Binder
 
             if (searchBool == true)
             {
+                addAccounts();
                 //go onto main screen 
             }
             else if (searchBool == false)
@@ -106,7 +107,8 @@ namespace Virtual_Binder
 
         public void loadAccounts()
         {
-            string newUsername, newEmail, newPassword, newClassNumber, newClass1, newClass2, newClass3, newClass4, newClass5;
+            string newUsername, newEmail, newPassword, newClass1, newClass2, newClass3, newClass4, newClass5;
+            int newClass1Average, newClass2Average, newClass3Average, newClass4Average, newClass5Average;
 
             XmlReader reader = XmlReader.Create("Resources/XMLAccountFile.xml");
 
@@ -122,9 +124,6 @@ namespace Virtual_Binder
                     reader.ReadToNextSibling("Password");
                     newPassword = reader.ReadString();
 
-                    reader.ReadToNextSibling("Class Number");
-                    newClassNumber = reader.ReadString();
-
                     reader.ReadToNextSibling("Class 1");
                     newClass1 = reader.ReadString();
 
@@ -136,15 +135,59 @@ namespace Virtual_Binder
 
                     reader.ReadToNextSibling("Class 4");
                     newClass4 = reader.ReadString();
+
                     reader.ReadToNextSibling("Class 5");
                     newClass5 = reader.ReadString();
 
-                    Accounts newAcc = new Accounts(newUsername, newEmail, newPassword, Convert.ToInt32(newClassNumber), newClass1, newClass2, newClass3, newClass4, newClass5);
+                    reader.ReadToNextSibling("Class 1 Average");
+                    newClass1Average = Convert.ToInt32(reader.ReadString());
+
+                    reader.ReadToNextSibling("Class 2 Average");
+                    newClass2Average = Convert.ToInt32(reader.ReadString());
+
+                    reader.ReadToNextSibling("Class 3 Average");
+                    newClass3Average = Convert.ToInt32(reader.ReadString());
+
+                    reader.ReadToNextSibling("Class 4 Average");
+                    newClass4Average = Convert.ToInt32(reader.ReadString());
+
+                    reader.ReadToNextSibling("Class 5 Average");
+                    newClass5Average = Convert.ToInt32(reader.ReadString());
+
+                    Accounts newAcc = new Accounts(newUsername, newEmail, newPassword, newClass1, newClass2, newClass3,
+                        newClass4, newClass5, newClass1Average, newClass2Average, newClass3Average, newClass4Average, newClass5Average);
                     accountList.Add(newAcc);
                 }
             }
 
             reader.Close();
-        } 
+        }
+
+        public void addAccounts()
+        {
+            XmlWriter writer = XmlWriter.Create("Resources/XMLAccountFile.xml", null);
+
+            writer.WriteStartElement("Account");
+
+            foreach (Accounts a in accountList)
+            {
+                writer.WriteStartElement("Account" + usernameTextBox.Text);
+
+                writer.WriteElementString("Username", a.username);
+                writer.WriteElementString("Email", a.email);
+                writer.WriteElementString("Password", a.password);
+                writer.WriteElementString("Class 1", a.class1);
+                writer.WriteElementString("Class 2", a.class2);
+                writer.WriteElementString("Class 3", a.class3);
+                writer.WriteElementString("Class 4", a.class4);
+                writer.WriteElementString("Class 5", a.class5);
+
+                writer.WriteEndElement();
+            }
+
+            writer.WriteEndElement();
+
+            writer.Close();
+        }
     }
 }

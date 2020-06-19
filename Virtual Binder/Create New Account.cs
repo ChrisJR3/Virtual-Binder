@@ -17,10 +17,12 @@ namespace Virtual_Binder
 
         public string newAccUsername, newAccEmail, newAccPassword;
 
+        List<Accounts> accountList = new List<Accounts>();
+
         public Create_New_Account()
         {
             InitializeComponent();
-            newAccUsername = UserControl.shareUsername;
+            loadAccounts();
         }
 
         private void exitButton2_Click(object sender, EventArgs e)
@@ -50,12 +52,11 @@ namespace Virtual_Binder
 
             foreach (Accounts a in accountList)
             {
-                writer.WriteStartElement("Account" + emailOrUsernameTextBox.Text);
+                writer.WriteStartElement("Account" + newAccUsername);
 
                 writer.WriteElementString("Username", a.username);
                 writer.WriteElementString("Email", a.email);
                 writer.WriteElementString("Password", a.password);
-                writer.WriteElementString("Class Number", Convert.ToString(a.classNumber));
                 writer.WriteElementString("Class 1", a.class1);
                 writer.WriteElementString("Class 2", a.class2);
                 writer.WriteElementString("Class 3", a.class3);
@@ -68,6 +69,64 @@ namespace Virtual_Binder
             writer.WriteEndElement();
 
             writer.Close();
+        }
+
+        public void loadAccounts()
+        {
+            string newUsername, newEmail, newPassword, newClass1, newClass2, newClass3, newClass4, newClass5;
+            int newClass1Average, newClass2Average, newClass3Average, newClass4Average, newClass5Average;
+
+            XmlReader reader = XmlReader.Create("Resources/XMLAccountFile.xml");
+
+            while (reader.Read())
+            {
+                if (reader.NodeType == XmlNodeType.Text)
+                {
+                    newUsername = reader.ReadString();
+
+                    reader.ReadToNextSibling("Email");
+                    newEmail = reader.ReadString();
+
+                    reader.ReadToNextSibling("Password");
+                    newPassword = reader.ReadString();
+
+                    reader.ReadToNextSibling("Class 1");
+                    newClass1 = reader.ReadString();
+
+                    reader.ReadToNextSibling("Class 2");
+                    newClass2 = reader.ReadString();
+
+                    reader.ReadToNextSibling("Class 3");
+                    newClass3 = reader.ReadString();
+
+                    reader.ReadToNextSibling("Class 4");
+                    newClass4 = reader.ReadString();
+
+                    reader.ReadToNextSibling("Class 5");
+                    newClass5 = reader.ReadString();
+
+                    reader.ReadToNextSibling("Class 1 Average");
+                    newClass1Average = Convert.ToInt32(reader.ReadString());
+
+                    reader.ReadToNextSibling("Class 2 Average");
+                    newClass2Average = Convert.ToInt32(reader.ReadString());
+
+                    reader.ReadToNextSibling("Class 3 Average");
+                    newClass3Average = Convert.ToInt32(reader.ReadString());
+
+                    reader.ReadToNextSibling("Class 4 Average");
+                    newClass4Average = Convert.ToInt32(reader.ReadString());
+
+                    reader.ReadToNextSibling("Class 5 Average");
+                    newClass5Average = Convert.ToInt32(reader.ReadString());
+
+                    Accounts newAcc = new Accounts(newUsername, newEmail, newPassword, newClass1, newClass2, newClass3,
+                        newClass4, newClass5, newClass1Average, newClass2Average, newClass3Average, newClass4Average, newClass5Average);
+                    accountList.Add(newAcc);
+                }
+            }
+
+            reader.Close();
         }
     }
 }
