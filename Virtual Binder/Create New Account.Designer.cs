@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.titleLabel2 = new System.Windows.Forms.Label();
             this.pleaseEnterClassName = new System.Windows.Forms.Label();
             this.whichClassLabel = new System.Windows.Forms.Label();
             this.classNameTextBox = new System.Windows.Forms.TextBox();
@@ -48,16 +48,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.backgroundTextBox2)).BeginInit();
             this.SuspendLayout();
             // 
-            // label1
+            // titleLabel2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(100, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(361, 64);
-            this.label1.TabIndex = 21;
-            this.label1.Text = "Virtual Binder";
+            this.titleLabel2.AutoSize = true;
+            this.titleLabel2.Font = new System.Drawing.Font("Microsoft YaHei", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleLabel2.ForeColor = System.Drawing.Color.White;
+            this.titleLabel2.Location = new System.Drawing.Point(100, 12);
+            this.titleLabel2.Name = "titleLabel2";
+            this.titleLabel2.Size = new System.Drawing.Size(361, 64);
+            this.titleLabel2.TabIndex = 21;
+            this.titleLabel2.Text = "Virtual Binder";
             // 
             // pleaseEnterClassName
             // 
@@ -125,20 +125,19 @@
             // passwordTextBox2
             // 
             this.passwordTextBox2.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwordTextBox2.Location = new System.Drawing.Point(286, 204);
+            this.passwordTextBox2.Location = new System.Drawing.Point(681, 128);
             this.passwordTextBox2.Name = "passwordTextBox2";
             this.passwordTextBox2.Size = new System.Drawing.Size(213, 33);
             this.passwordTextBox2.TabIndex = 49;
-            this.passwordTextBox2.Visible = false;
+            this.passwordTextBox2.WordWrap = false;
             // 
             // passwordTextBox1
             // 
             this.passwordTextBox1.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwordTextBox1.Location = new System.Drawing.Point(286, 165);
+            this.passwordTextBox1.Location = new System.Drawing.Point(681, 89);
             this.passwordTextBox1.Name = "passwordTextBox1";
             this.passwordTextBox1.Size = new System.Drawing.Size(213, 33);
             this.passwordTextBox1.TabIndex = 48;
-            this.passwordTextBox1.Visible = false;
             // 
             // passwordLabel2
             // 
@@ -146,12 +145,11 @@
             this.passwordLabel2.BackColor = System.Drawing.Color.Transparent;
             this.passwordLabel2.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passwordLabel2.ForeColor = System.Drawing.Color.White;
-            this.passwordLabel2.Location = new System.Drawing.Point(84, 207);
+            this.passwordLabel2.Location = new System.Drawing.Point(479, 131);
             this.passwordLabel2.Name = "passwordLabel2";
             this.passwordLabel2.Size = new System.Drawing.Size(191, 26);
             this.passwordLabel2.TabIndex = 47;
             this.passwordLabel2.Text = "Confirm Password:";
-            this.passwordLabel2.Visible = false;
             // 
             // passwordLabel1
             // 
@@ -159,42 +157,38 @@
             this.passwordLabel1.BackColor = System.Drawing.Color.Transparent;
             this.passwordLabel1.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passwordLabel1.ForeColor = System.Drawing.Color.White;
-            this.passwordLabel1.Location = new System.Drawing.Point(84, 168);
+            this.passwordLabel1.Location = new System.Drawing.Point(479, 92);
             this.passwordLabel1.Name = "passwordLabel1";
             this.passwordLabel1.Size = new System.Drawing.Size(107, 26);
             this.passwordLabel1.TabIndex = 46;
             this.passwordLabel1.Text = "Password:";
-            this.passwordLabel1.Visible = false;
             // 
             // createAccountButton2
             // 
             this.createAccountButton2.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.createAccountButton2.Location = new System.Drawing.Point(187, 245);
+            this.createAccountButton2.Location = new System.Drawing.Point(582, 169);
             this.createAccountButton2.Name = "createAccountButton2";
             this.createAccountButton2.Size = new System.Drawing.Size(186, 39);
             this.createAccountButton2.TabIndex = 45;
             this.createAccountButton2.Text = "Create Account?";
             this.createAccountButton2.UseVisualStyleBackColor = true;
-            this.createAccountButton2.Visible = false;
             this.createAccountButton2.Click += new System.EventHandler(this.createAccountButton2_Click);
             // 
             // usernameTextBox
             // 
             this.usernameTextBox.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usernameTextBox.Location = new System.Drawing.Point(286, 126);
+            this.usernameTextBox.Location = new System.Drawing.Point(681, 50);
             this.usernameTextBox.Name = "usernameTextBox";
             this.usernameTextBox.Size = new System.Drawing.Size(213, 33);
             this.usernameTextBox.TabIndex = 44;
-            this.usernameTextBox.Visible = false;
             // 
             // emailTextBox
             // 
             this.emailTextBox.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.emailTextBox.Location = new System.Drawing.Point(286, 87);
+            this.emailTextBox.Location = new System.Drawing.Point(681, 11);
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.Size = new System.Drawing.Size(213, 33);
             this.emailTextBox.TabIndex = 43;
-            this.emailTextBox.Visible = false;
             // 
             // usernameLabel
             // 
@@ -202,12 +196,11 @@
             this.usernameLabel.BackColor = System.Drawing.Color.Transparent;
             this.usernameLabel.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usernameLabel.ForeColor = System.Drawing.Color.White;
-            this.usernameLabel.Location = new System.Drawing.Point(84, 129);
+            this.usernameLabel.Location = new System.Drawing.Point(479, 53);
             this.usernameLabel.Name = "usernameLabel";
             this.usernameLabel.Size = new System.Drawing.Size(113, 26);
             this.usernameLabel.TabIndex = 42;
             this.usernameLabel.Text = "Username:";
-            this.usernameLabel.Visible = false;
             // 
             // emailLabel
             // 
@@ -215,22 +208,20 @@
             this.emailLabel.BackColor = System.Drawing.Color.Transparent;
             this.emailLabel.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.emailLabel.ForeColor = System.Drawing.Color.White;
-            this.emailLabel.Location = new System.Drawing.Point(84, 90);
+            this.emailLabel.Location = new System.Drawing.Point(479, 14);
             this.emailLabel.Name = "emailLabel";
             this.emailLabel.Size = new System.Drawing.Size(70, 26);
             this.emailLabel.TabIndex = 41;
             this.emailLabel.Text = "Email:";
-            this.emailLabel.Visible = false;
             // 
             // backgroundTextBox2
             // 
             this.backgroundTextBox2.BackgroundImage = global::Virtual_Binder.Properties.Resources.Blue_square;
-            this.backgroundTextBox2.Location = new System.Drawing.Point(72, 79);
+            this.backgroundTextBox2.Location = new System.Drawing.Point(467, 3);
             this.backgroundTextBox2.Name = "backgroundTextBox2";
             this.backgroundTextBox2.Size = new System.Drawing.Size(436, 212);
             this.backgroundTextBox2.TabIndex = 40;
             this.backgroundTextBox2.TabStop = false;
-            this.backgroundTextBox2.Visible = false;
             // 
             // Create_New_Account
             // 
@@ -253,7 +244,7 @@
             this.Controls.Add(this.classNameTextBox);
             this.Controls.Add(this.whichClassLabel);
             this.Controls.Add(this.pleaseEnterClassName);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.titleLabel2);
             this.Name = "Create_New_Account";
             this.Size = new System.Drawing.Size(626, 303);
             ((System.ComponentModel.ISupportInitialize)(this.backgroundTextBox2)).EndInit();
@@ -264,7 +255,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label titleLabel2;
         private System.Windows.Forms.Label pleaseEnterClassName;
         private System.Windows.Forms.Label whichClassLabel;
         private System.Windows.Forms.TextBox classNameTextBox;

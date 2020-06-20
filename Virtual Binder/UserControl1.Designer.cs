@@ -37,14 +37,14 @@
             this.exitButton = new System.Windows.Forms.Button();
             this.createAccountButton = new System.Windows.Forms.Button();
             this.logInButton1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.titleLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.backgroundBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // logInButton2
             // 
             this.logInButton2.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logInButton2.Location = new System.Drawing.Point(240, 233);
+            this.logInButton2.Location = new System.Drawing.Point(334, 296);
             this.logInButton2.Name = "logInButton2";
             this.logInButton2.Size = new System.Drawing.Size(96, 39);
             this.logInButton2.TabIndex = 29;
@@ -56,7 +56,7 @@
             // passwordTextBox
             // 
             this.passwordTextBox.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwordTextBox.Location = new System.Drawing.Point(291, 187);
+            this.passwordTextBox.Location = new System.Drawing.Point(385, 250);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.Size = new System.Drawing.Size(213, 33);
             this.passwordTextBox.TabIndex = 28;
@@ -65,7 +65,7 @@
             // emailOrUsernameTextBox
             // 
             this.emailOrUsernameTextBox.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.emailOrUsernameTextBox.Location = new System.Drawing.Point(291, 144);
+            this.emailOrUsernameTextBox.Location = new System.Drawing.Point(385, 207);
             this.emailOrUsernameTextBox.Name = "emailOrUsernameTextBox";
             this.emailOrUsernameTextBox.Size = new System.Drawing.Size(213, 33);
             this.emailOrUsernameTextBox.TabIndex = 27;
@@ -77,7 +77,7 @@
             this.passwordLabel.BackColor = System.Drawing.Color.Transparent;
             this.passwordLabel.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passwordLabel.ForeColor = System.Drawing.Color.White;
-            this.passwordLabel.Location = new System.Drawing.Point(89, 190);
+            this.passwordLabel.Location = new System.Drawing.Point(183, 253);
             this.passwordLabel.Name = "passwordLabel";
             this.passwordLabel.Size = new System.Drawing.Size(107, 26);
             this.passwordLabel.TabIndex = 26;
@@ -90,7 +90,7 @@
             this.emailOrUsernameLabel.BackColor = System.Drawing.Color.Transparent;
             this.emailOrUsernameLabel.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.emailOrUsernameLabel.ForeColor = System.Drawing.Color.White;
-            this.emailOrUsernameLabel.Location = new System.Drawing.Point(89, 147);
+            this.emailOrUsernameLabel.Location = new System.Drawing.Point(183, 210);
             this.emailOrUsernameLabel.Name = "emailOrUsernameLabel";
             this.emailOrUsernameLabel.Size = new System.Drawing.Size(175, 26);
             this.emailOrUsernameLabel.TabIndex = 25;
@@ -100,7 +100,7 @@
             // backgroundBox1
             // 
             this.backgroundBox1.Image = global::Virtual_Binder.Properties.Resources.Blue_square;
-            this.backgroundBox1.Location = new System.Drawing.Point(77, 132);
+            this.backgroundBox1.Location = new System.Drawing.Point(171, 195);
             this.backgroundBox1.Name = "backgroundBox1";
             this.backgroundBox1.Size = new System.Drawing.Size(436, 149);
             this.backgroundBox1.TabIndex = 24;
@@ -110,7 +110,7 @@
             // exitButton
             // 
             this.exitButton.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exitButton.Location = new System.Drawing.Point(441, 326);
+            this.exitButton.Location = new System.Drawing.Point(553, 380);
             this.exitButton.Name = "exitButton";
             this.exitButton.Size = new System.Drawing.Size(96, 38);
             this.exitButton.TabIndex = 23;
@@ -121,7 +121,7 @@
             // createAccountButton
             // 
             this.createAccountButton.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.createAccountButton.Location = new System.Drawing.Point(162, 210);
+            this.createAccountButton.Location = new System.Drawing.Point(274, 264);
             this.createAccountButton.Name = "createAccountButton";
             this.createAccountButton.Size = new System.Drawing.Size(199, 38);
             this.createAccountButton.TabIndex = 22;
@@ -132,7 +132,7 @@
             // logInButton1
             // 
             this.logInButton1.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logInButton1.Location = new System.Drawing.Point(210, 166);
+            this.logInButton1.Location = new System.Drawing.Point(322, 220);
             this.logInButton1.Name = "logInButton1";
             this.logInButton1.Size = new System.Drawing.Size(96, 38);
             this.logInButton1.TabIndex = 21;
@@ -140,16 +140,16 @@
             this.logInButton1.UseVisualStyleBackColor = true;
             this.logInButton1.Click += new System.EventHandler(this.logInButton1_Click);
             // 
-            // label1
+            // titleLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(110, 41);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(361, 64);
-            this.label1.TabIndex = 20;
-            this.label1.Text = "Virtual Binder";
+            this.titleLabel.AutoSize = true;
+            this.titleLabel.Font = new System.Drawing.Font("Microsoft YaHei", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleLabel.ForeColor = System.Drawing.Color.White;
+            this.titleLabel.Location = new System.Drawing.Point(222, 95);
+            this.titleLabel.Name = "titleLabel";
+            this.titleLabel.Size = new System.Drawing.Size(361, 64);
+            this.titleLabel.TabIndex = 20;
+            this.titleLabel.Text = "Virtual Binder";
             // 
             // UserControl1
             // 
@@ -165,9 +165,9 @@
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.createAccountButton);
             this.Controls.Add(this.logInButton1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.titleLabel);
             this.Name = "UserControl1";
-            this.Size = new System.Drawing.Size(584, 404);
+            this.Size = new System.Drawing.Size(834, 508);
             ((System.ComponentModel.ISupportInitialize)(this.backgroundBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -184,6 +184,6 @@
         private System.Windows.Forms.Button exitButton;
         private System.Windows.Forms.Button createAccountButton;
         private System.Windows.Forms.Button logInButton1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label titleLabel;
     }
 }

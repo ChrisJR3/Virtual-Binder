@@ -40,20 +40,34 @@ namespace Virtual_Binder
             MainScreen ms = new MainScreen();
             this.Controls.Add(ms);
 
-            Form cna = this.FindForm();
-            cna.Controls.Remove(this);
+            titleLabel2.Visible = false;
+            whichClassLabel.Visible = false;
+            pleaseEnterClassName.Visible = false;
+            classNameTextBox.Visible = false;
+            anotherClassButton.Visible = false;
+            moveOnButton.Visible = false;
+            exitButton2.Visible = false;
         }
 
         private void anotherClassButton_Click(object sender, EventArgs e)
         {
             classNameList.Add(classNameTextBox.Text);
 
-            classCounter++;
-            whichClassLabel.Text = "CLASS " + classCounter;
+            if (classCounter == 5)
+            {
+                classNameTextBox.Text = "You have reached the class limit, please move on.";
+            }
+            else
+            {
+                classCounter++;
+                whichClassLabel.Text = "CLASS " + classCounter;
+            }
         }
 
         public void addAccount()
         {
+            string firstClassName = classNameList[1];
+
             XmlWriter writer = XmlWriter.Create("Resources/XMLAccountFile.xml", null);
 
             writer.WriteStartElement("Account");
@@ -63,22 +77,32 @@ namespace Virtual_Binder
             writer.WriteElementString("Username", usernameTextBox.Text);
             writer.WriteElementString("Email", emailTextBox.Text);
             writer.WriteElementString("Password", passwordTextBox1.Text);
-            writer.WriteElementString("Class 1", passwordTextBox1.Text);
+            writer.WriteElementString("Class 1", firstClassName);
+            writer.WriteElementString("Class 1 Grade", "0");
+            writer.WriteElementString("Class 1 Weight", "0");
             if (classNameList[2] != null)
             {
                 writer.WriteElementString("Class 2", classNameList[2]);
+                writer.WriteElementString("Class 2 Grade", "0");
+                writer.WriteElementString("Class 2 Weight", "0");
             }
             if (classNameList[3] != null)
             {
                 writer.WriteElementString("Class 3", classNameList[3]);
+                writer.WriteElementString("Class 3 Grade", "0");
+                writer.WriteElementString("Class 3 Weight", "0");
             }
             if (classNameList[4] != null)
             {
                 writer.WriteElementString("Class 4", classNameList[4]);
+                writer.WriteElementString("Class 4 Grade", "0");
+                writer.WriteElementString("Class 4 Weight", "0");
             }
             if (classNameList[5] != null)
             {
                 writer.WriteElementString("Class 5", classNameList[5]);
+                writer.WriteElementString("Class 5 Grade", "0");
+                writer.WriteElementString("Class 5 Weight", "0");
             }
 
             writer.WriteEndElement();
@@ -92,6 +116,7 @@ namespace Virtual_Binder
         {
             string newUsername, newEmail, newPassword, newClass1, newClass2, newClass3, newClass4, newClass5;
             int newClass1Average, newClass2Average, newClass3Average, newClass4Average, newClass5Average;
+            int newClass1Weight, newClass2Weight, newClass3Weight, newClass4Weight, newClass5Weight;
 
             XmlReader reader = XmlReader.Create("Resources/XMLAccountFile.xml");
 
@@ -125,20 +150,36 @@ namespace Virtual_Binder
                     reader.ReadToNextSibling("Class 1 Average");
                     newClass1Average = Convert.ToInt32(reader.ReadString());
 
+                    reader.ReadToNextSibling("Class 1 Weight");
+                    newClass1Weight = Convert.ToInt32(reader.ReadString());
+
                     reader.ReadToNextSibling("Class 2 Average");
                     newClass2Average = Convert.ToInt32(reader.ReadString());
+
+                    reader.ReadToNextSibling("Class 2 Weight");
+                    newClass2Weight = Convert.ToInt32(reader.ReadString());
 
                     reader.ReadToNextSibling("Class 3 Average");
                     newClass3Average = Convert.ToInt32(reader.ReadString());
 
+                    reader.ReadToNextSibling("Class 3 Weight");
+                    newClass3Weight = Convert.ToInt32(reader.ReadString());
+
                     reader.ReadToNextSibling("Class 4 Average");
                     newClass4Average = Convert.ToInt32(reader.ReadString());
+
+                    reader.ReadToNextSibling("Class 4 Weight");
+                    newClass4Weight = Convert.ToInt32(reader.ReadString());
 
                     reader.ReadToNextSibling("Class 5 Average");
                     newClass5Average = Convert.ToInt32(reader.ReadString());
 
+                    reader.ReadToNextSibling("Class 5 Weight");
+                    newClass5Weight = Convert.ToInt32(reader.ReadString());
+
                     Accounts newAcc = new Accounts(newUsername, newEmail, newPassword, newClass1, newClass2, newClass3,
-                        newClass4, newClass5, newClass1Average, newClass2Average, newClass3Average, newClass4Average, newClass5Average);
+                        newClass4, newClass5, newClass1Average, newClass1Weight, newClass2Average, newClass2Weight,
+                        newClass3Average, newClass3Weight, newClass4Average, newClass4Weight, newClass5Average, newClass5Weight);
                     accountList.Add(newAcc);
                 }
             }
@@ -158,6 +199,8 @@ namespace Virtual_Binder
                 usernameTextBox.Visible = false;
                 passwordTextBox1.Visible = false;
                 passwordTextBox2.Visible = false;
+                backgroundTextBox2.Visible = false;
+                createAccountButton2.Visible = false;
 
                 pleaseEnterClassName.Visible = true;
                 classNameTextBox.Visible = true;

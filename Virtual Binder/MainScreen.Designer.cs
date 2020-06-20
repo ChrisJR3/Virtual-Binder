@@ -40,7 +40,7 @@
             this.totalPercentTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.addGradeButton = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.currentTotalLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // autoFillLabel
@@ -123,9 +123,9 @@
             // newestGradeTextBox
             // 
             this.newestGradeTextBox.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.newestGradeTextBox.Location = new System.Drawing.Point(499, 174);
+            this.newestGradeTextBox.Location = new System.Drawing.Point(8, 201);
             this.newestGradeTextBox.Name = "newestGradeTextBox";
-            this.newestGradeTextBox.Size = new System.Drawing.Size(66, 33);
+            this.newestGradeTextBox.Size = new System.Drawing.Size(532, 33);
             this.newestGradeTextBox.TabIndex = 35;
             this.newestGradeTextBox.Visible = false;
             // 
@@ -135,7 +135,7 @@
             this.emailLabel.BackColor = System.Drawing.Color.Transparent;
             this.emailLabel.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.emailLabel.ForeColor = System.Drawing.Color.White;
-            this.emailLabel.Location = new System.Drawing.Point(3, 177);
+            this.emailLabel.Location = new System.Drawing.Point(3, 161);
             this.emailLabel.Name = "emailLabel";
             this.emailLabel.Size = new System.Drawing.Size(298, 26);
             this.emailLabel.TabIndex = 34;
@@ -145,9 +145,9 @@
             // totalPercentTextBox
             // 
             this.totalPercentTextBox.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalPercentTextBox.Location = new System.Drawing.Point(499, 212);
+            this.totalPercentTextBox.Location = new System.Drawing.Point(8, 276);
             this.totalPercentTextBox.Name = "totalPercentTextBox";
-            this.totalPercentTextBox.Size = new System.Drawing.Size(66, 33);
+            this.totalPercentTextBox.Size = new System.Drawing.Size(532, 33);
             this.totalPercentTextBox.TabIndex = 37;
             this.totalPercentTextBox.Visible = false;
             // 
@@ -157,7 +157,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(3, 215);
+            this.label1.Location = new System.Drawing.Point(3, 237);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(493, 26);
             this.label1.TabIndex = 36;
@@ -167,7 +167,7 @@
             // addGradeButton
             // 
             this.addGradeButton.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addGradeButton.Location = new System.Drawing.Point(220, 276);
+            this.addGradeButton.Location = new System.Drawing.Point(209, 333);
             this.addGradeButton.Name = "addGradeButton";
             this.addGradeButton.Size = new System.Drawing.Size(137, 34);
             this.addGradeButton.TabIndex = 38;
@@ -175,25 +175,25 @@
             this.addGradeButton.UseVisualStyleBackColor = true;
             this.addGradeButton.Click += new System.EventHandler(this.addGradeButton_Click);
             // 
-            // label2
+            // currentTotalLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(3, 351);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(270, 26);
-            this.label2.TabIndex = 39;
-            this.label2.Text = "Your current total grade is:";
-            this.label2.Visible = false;
+            this.currentTotalLabel.AutoSize = true;
+            this.currentTotalLabel.BackColor = System.Drawing.Color.Transparent;
+            this.currentTotalLabel.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.currentTotalLabel.ForeColor = System.Drawing.Color.White;
+            this.currentTotalLabel.Location = new System.Drawing.Point(3, 370);
+            this.currentTotalLabel.Name = "currentTotalLabel";
+            this.currentTotalLabel.Size = new System.Drawing.Size(270, 26);
+            this.currentTotalLabel.TabIndex = 39;
+            this.currentTotalLabel.Text = "Your current total grade is:";
+            this.currentTotalLabel.Visible = false;
             // 
             // MainScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gray;
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.currentTotalLabel);
             this.Controls.Add(this.addGradeButton);
             this.Controls.Add(this.totalPercentTextBox);
             this.Controls.Add(this.label1);
@@ -228,6 +228,6 @@
         private System.Windows.Forms.TextBox totalPercentTextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button addGradeButton;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label currentTotalLabel;
     }
 }

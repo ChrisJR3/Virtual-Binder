@@ -16,6 +16,8 @@ namespace Virtual_Binder
         List<Accounts> accountList = new List<Accounts>();
         List<String> stringList = new List<String>();
 
+        public int screenChosing = 3;
+
         Boolean searchBool = false;
 
         public string shareUsername, shareEmail, sharePassword;
@@ -38,13 +40,19 @@ namespace Virtual_Binder
 
             if (searchBool == true)
             {
-                MainScreen ms1 = new MainScreen(emailOrUsernameTextBox.Text);
+                emailOrUsernameLabel.Visible = false;
+                passwordLabel.Visible = false;
+                emailOrUsernameTextBox.Visible = false;
+                passwordTextBox.Visible = false;
+                backgroundBox1.Visible = false;
+                logInButton2.Visible = false;
+                createAccountButton.Visible = false;
+                logInButton1.Visible = false;
+                titleLabel.Visible = false;
+                exitButton.Visible = false;
 
                 MainScreen ms2 = new MainScreen();
                 this.Controls.Add(ms2);
-
-                Form ls = this.FindForm();
-                ls.Controls.Remove(this);
             }
             else if (searchBool == false)
             {
@@ -64,12 +72,20 @@ namespace Virtual_Binder
         }
 
         private void createAccountButton_Click(object sender, EventArgs e)
-        {
+        {           
+            emailOrUsernameLabel.Visible = false;
+            passwordLabel.Visible = false;
+            emailOrUsernameTextBox.Visible = false;
+            passwordTextBox.Visible = false;
+            backgroundBox1.Visible = false;
+            logInButton2.Visible = false;
+            createAccountButton.Visible = false;
+            logInButton1.Visible = false;
+            titleLabel.Visible = false;
+            exitButton.Visible = false;
+
             Create_New_Account cna = new Create_New_Account();
             this.Controls.Add(cna);
-
-            Form ls = this.FindForm();
-            ls.Controls.Remove(this);
         }
 
         public Boolean LinearSearch(List<String> searchList, String searchValue)
@@ -88,6 +104,7 @@ namespace Virtual_Binder
         {
             string newUsername, newEmail, newPassword, newClass1, newClass2, newClass3, newClass4, newClass5;
             int newClass1Average, newClass2Average, newClass3Average, newClass4Average, newClass5Average;
+            int newClass1Weight, newClass2Weight, newClass3Weight, newClass4Weight, newClass5Weight;
 
             XmlReader reader = XmlReader.Create("Resources/XMLAccountFile.xml");
 
@@ -95,6 +112,9 @@ namespace Virtual_Binder
             {
                 if (reader.NodeType == XmlNodeType.Text)
                 {
+                    reader.ReadStartElement();
+
+                    reader.ReadToDescendant("Username");
                     newUsername = reader.ReadString();
 
                     reader.ReadToNextSibling("Email");
@@ -121,24 +141,41 @@ namespace Virtual_Binder
                     reader.ReadToNextSibling("Class 1 Average");
                     newClass1Average = Convert.ToInt32(reader.ReadString());
 
+                    reader.ReadToNextSibling("Class 1 Weight");
+                    newClass1Weight = Convert.ToInt32(reader.ReadString());
+
                     reader.ReadToNextSibling("Class 2 Average");
                     newClass2Average = Convert.ToInt32(reader.ReadString());
+
+                    reader.ReadToNextSibling("Class 2 Weight");
+                    newClass2Weight = Convert.ToInt32(reader.ReadString());
 
                     reader.ReadToNextSibling("Class 3 Average");
                     newClass3Average = Convert.ToInt32(reader.ReadString());
 
+                    reader.ReadToNextSibling("Class 3 Weight");
+                    newClass3Weight = Convert.ToInt32(reader.ReadString());
+
                     reader.ReadToNextSibling("Class 4 Average");
                     newClass4Average = Convert.ToInt32(reader.ReadString());
+
+                    reader.ReadToNextSibling("Class 4 Weight");
+                    newClass4Weight = Convert.ToInt32(reader.ReadString());
 
                     reader.ReadToNextSibling("Class 5 Average");
                     newClass5Average = Convert.ToInt32(reader.ReadString());
 
+                    reader.ReadToNextSibling("Class 5 Weight");
+                    newClass5Weight = Convert.ToInt32(reader.ReadString());
+
+                    reader.ReadEndElement();
+
                     Accounts newAcc = new Accounts(newUsername, newEmail, newPassword, newClass1, newClass2, newClass3,
-                        newClass4, newClass5, newClass1Average, newClass2Average, newClass3Average, newClass4Average, newClass5Average);
+                        newClass4, newClass5, newClass1Average, newClass1Weight, newClass2Average, newClass2Weight,
+                        newClass3Average, newClass3Weight, newClass4Average, newClass4Weight, newClass5Average, newClass5Weight);
                     accountList.Add(newAcc);
                 }
             }
-
             reader.Close();
         }
     }
